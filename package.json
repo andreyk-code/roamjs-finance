@@ -2,11 +2,10 @@
   "name": "roamjs-finance",
   "version": "1.0.0",
   "description": "RoamJS extensions around finances and investing. See https://roamresearch.com for more info on Roam.",
-  "main": "index.js",
   "scripts": {
-    "build": "npm install; webpack",
+    "build": "webpack",
     "test": "jest --passWithNoTests",
-    "local": "http-server"
+    "local": "npm install; http-server"
   },
   "repository": {
     "type": "git",
@@ -23,9 +22,13 @@
   "author": "Andrey Kumanov",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.14.2",
     "http-server": "^0.12.3",
-    "jest": "^26.5.3",
+    "install": "^0.13.0",
+    "source-map-loader": "^1.1.1",
     "terser-webpack-plugin": "^5.0.0",
+    "ts-loader": "^8.0.6",
+    "typescript": "^4.0.3",
     "webpack": "^5.1.2",
     "webpack-cli": "^4.0.0"
   },
