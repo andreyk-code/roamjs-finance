@@ -173,7 +173,7 @@ const deployCryptoTickerBar = async () => {
     if(title){
       	const splitTitle = title.innerText.split(' ')
     	 if(months.has(splitTitle[0])){
-          const checkExistingCryptoBar: HTMLElement = document.querySelector('#roam-fin-crypto-ticker-bar')
+          const checkExistingCryptoBar: HTMLElement = document.querySelector('#roam-fin-crypto-bar')
 
           if(checkExistingCryptoBar){
               const checkExistingCells: NodeListOf<HTMLElement> = document.querySelectorAll("#roam-fin-crypto-cell")
