@@ -18,15 +18,12 @@ export const createDivElem = (cellStyle: Record<string, string>) => {
       (<any>divElement.style)[key] = value
     })
   }
-  console.log('addedd keys')
-  console.log(divElement)
   // divElement.setAttribute('style', JSON.stringify(cellStyle))
 
   return divElement
 }
 
 export const addTextToElem = (text: string, elem: HTMLElement) => {
-    console.log(text)
     const textNode = document.createTextNode(text);
     elem.appendChild(textNode)
 }

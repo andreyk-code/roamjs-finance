@@ -10,7 +10,14 @@ const months = new Set(['January', 'Jan',
                        'February', 'Feb', 
                        'March', 'Mar', 
                        'April', 'Apr',
-                       'October', 'Oct'])
+                       'May',
+                       'June', 'Jun',
+                       'July', 'Jul',
+                       'August', 'Aug',
+                       'September', 'Sept', 
+                       'October', 'Oct',
+                       'November', 'Nov',
+                       'December', 'Dec',])
 
       
 const coinTickerToGeckoID: Record<string, string> = {
@@ -114,7 +121,7 @@ const getCoinData = async (ticker: string) => {
   let coinId 
   let contractId
   const currency = window.roamFinance.crypto.currency 
-  
+
   if(tokenContractID[ticker]){
     contractId = tokenContractID[ticker]
     const response = await fetch(`https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=${contractId}&vs_currencies=${currency}`)
@@ -168,34 +175,33 @@ const createCryptoTickerBar = async (coins: string[]) => {
 
 const deployCryptoTickerBar = async () => {
 
-    const title: HTMLElement = document.querySelector(".rm-title-display");
+  const title: HTMLElement = document.querySelector(".rm-title-display");
+  if(title){
+      const splitTitle = title.innerText.split(' ')
+      if(months.has(splitTitle[0])){
+        const checkExistingCryptoBar: HTMLElement = document.querySelector('#roam-fin-crypto-bar')
 
-    if(title){
-      	const splitTitle = title.innerText.split(' ')
-    	 if(months.has(splitTitle[0])){
-          const checkExistingCryptoBar: HTMLElement = document.querySelector('#roam-fin-crypto-bar')
-
-          if(checkExistingCryptoBar){
-              const checkExistingCells: NodeListOf<HTMLElement> = document.querySelectorAll("#roam-fin-crypto-cell")
-              checkExistingCells.forEach(async coinCell => {
-                const innerText = coinCell.innerText.split(':')
-                const ticker = innerText[0]
-                const newValue = await getCoinData(ticker)
-                const newValueFloat = convertDollarToFloat(innerText[1])
-              
-                if(newValue < newValueFloat){
-                  coinCell.style.color = redHex
-                } else if (newValue > newValueFloat){
-                  coinCell.style.color = greenHex
-                }
-                coinCell.innerText = coinCellFormatText(ticker, newValue)
-              })
-          } else {
-              const cryptoBar = await createCryptoTickerBar(window.roamFinance.crypto.tickers)
-              title.after(cryptoBar)
-          }
-       }	
-    }
+        if(checkExistingCryptoBar){
+            const checkExistingCells: NodeListOf<HTMLElement> = document.querySelectorAll("#roam-fin-crypto-cell")
+            checkExistingCells.forEach(async coinCell => {
+              const innerText = coinCell.innerText.split(':')
+              const ticker = innerText[0]
+              const newValue = await getCoinData(ticker)
+              const newValueFloat = convertDollarToFloat(innerText[1])
+            
+              if(newValue < newValueFloat){
+                coinCell.style.color = redHex
+              } else if (newValue > newValueFloat){
+                coinCell.style.color = greenHex
+              }
+              coinCell.innerText = coinCellFormatText(ticker, newValue)
+            })
+        } else {
+            const cryptoBar = await createCryptoTickerBar(window.roamFinance.crypto.tickers)
+            title.after(cryptoBar)
+        }
+      }	
+  }
  
   timeout = setTimeout(deployCryptoTickerBar, 30000)
 } 

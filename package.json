@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "test": "jest --passWithNoTests",
-    "local": "npm install; http-server"
+    "local": "npm run build; http-server"
   },
   "repository": {
     "type": "git",
