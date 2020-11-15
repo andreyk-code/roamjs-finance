@@ -9,7 +9,7 @@ A suite of plugins around finance for [Roam](https://roamresearch.com).
     - On the first bullet point, create this block `{{[[roam/js]]}}`. This will now instantiate roam/js, a box should appear with a button to toggle roam/js on/off.
     - Create code block on second bullet point using back ticks ` ``` ``` `. Set the code block to javascript
 
-1. In the javascript code block for roam/js, add the following snippets of code. Change the ticker and currency values based on what makes the most sense for you. See below under features section to see which values are supported.
+1. In the javascript code block for roam/js, add the following snippets of code. Change the ticker and currency values based on what makes the most sense for you. See below in features section to see which values are supported.
 
 ```
 window.roamFinance = {}
@@ -25,7 +25,7 @@ window.roamFinance.crypto = {
   currency: 'eur'
 }
 
-const addScript = (name) => {
+const addFinanceScript = (name) => {
   var old = document.getElementById("roam-fin-" + name);
   if (old) {
     old.remove();
@@ -38,11 +38,10 @@ const addScript = (name) => {
   s.type = "text/javascript";
   document.getElementsByTagName("head")[0].appendChild(s);
 };
-addScript("crypto-bar");
+addFinanceScript("crypto-bar");
 ```
 
-2. Restart your browser page or roam/js for the script to take into action 
-
+2. Restart your browser page or roam/js for the script to activate
 
 ## Features
 
@@ -53,7 +52,7 @@ This creates a bar of crypto currency prices at the top of any "daily page" that
 The following coin tickers and currencies are supported:
 
 #### Tickers
-|      |      |      |      |      |      |      |      |      |      |      |
+
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | BTC  | ETH  | LTC  | ADA  | AAVE | ATOM | BCH  | BNB  | BSV  | BUSD | CEL  | 
 | CDAI | CRO  | DAI  | DASH | DOT  | EOS  | HT   | IOTA | LEO  | LEND | LINK | 
@@ -74,7 +73,9 @@ Coming Soon!
 
 ## Contributing
 
-Help is welcome! Especially to add coins & tickers for support. 
+Thank you for your interest to contribute! Follow the steps below to troubleshoot locally. Submit a PR once you're ready.
+
+If you're looking to add a coin or currency, copy/paste the existing code and change the values for your coin. This plugin uses [coingecko.com](https://coingecko.com) for the API, check for the correct coin ID in their API guide.
 
 ### Local Setup
 1. Install npm
