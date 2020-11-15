@@ -52,7 +52,7 @@ This creates a bar of crypto currency prices at the top of any "daily page" that
 The following coin tickers and currencies are supported:
 
 #### Tickers
-
+|      |      |      |      |      |      |      |      |      |      |      |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | BTC  | ETH  | LTC  | ADA  | AAVE | ATOM | BCH  | BNB  | BSV  | BUSD | CEL  | 
 | CDAI | CRO  | DAI  | DASH | DOT  | EOS  | HT   | IOTA | LEO  | LEND | LINK | 
