@@ -1,15 +1,21 @@
 # roamjs-finance
 
-A suite of plugins around finance for [Roam](https://roamresearch.com). 
+A suite of plugins around finance for [Roam Research](https://roamresearch.com):
+
+[crypto-price-table](#crypto-price-table): displays a table with cryptocurrency prices on all daily note pages. Prices are updated every 30s and the color changes from green/red depending on if price went up or down.
+
+![screenshot_crypto-price-table](https://user-images.githubusercontent.com/43050331/99411028-02b58780-28a8-11eb-99b4-fddbf3f0ecc4.png)
+
+stock-price-table: coming soon!
 
 ## Installation
 
-0. If you don't have a roam/js page created in Roam, create one now.
+0. If you don't already have a roam/js page created in Roam, create one now:
     - Create a page called roam/js
     - On the first bullet point, create this block `{{[[roam/js]]}}`. This will now instantiate roam/js, a box should appear with a button to toggle roam/js on/off.
     - Create code block on second bullet point using back ticks ` ``` ``` `. Set the code block to javascript
 
-1. In the javascript code block for roam/js, add the following snippets of code. Change the ticker and currency values based on what makes the most sense for you. See below in features section to see which values are supported.
+1. In the javascript code block for roam/js, add the following snippets of code. Change the ticker and currency values based on what makes the most sense for you. See below in [features](#features) section to see which values are supported.
 
 ```
 window.roamFinance = {}
@@ -38,16 +44,16 @@ const addFinanceScript = (name) => {
   s.type = "text/javascript";
   document.getElementsByTagName("head")[0].appendChild(s);
 };
-addFinanceScript("crypto-bar");
+addFinanceScript("crypto-price-table");
 ```
 
 2. Restart your browser page or roam/js for the script to activate
 
 ## Features
 
-### Crypto-Bar
+### Crypto Price Table
 
-This creates a bar of crypto currency prices at the top of any "daily page" that gets opened up. The bar updates with new prices every 30 seconds and will change from green/red depending on if the price went up/down since the previous value.
+This creates a table of crypto currency prices at the top of any "daily page". The table updates with new prices every 30 seconds and will change from green/red depending on if the price went up/down since the previous value.
 
 The following coin tickers and currencies are supported:
 
@@ -67,7 +73,7 @@ The following coin tickers and currencies are supported:
 | btc  | eth  | ltc  | bch  | bnb  | dot  | eos  | link | xlm  | xrp  | yfi  |  
   
 
-### Stock-Bar
+### Stock Price Table
 
 Coming Soon!
 

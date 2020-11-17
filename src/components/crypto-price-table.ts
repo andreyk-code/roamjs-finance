@@ -97,7 +97,7 @@ const currencySymbols: Record<string, string> = {
 const greenHex = '#008000'
 const redHex = '#FF0000'
 
-const barCellStyle: Record<string, string> =  {
+const tableCellStyle: Record<string, string> =  {
   backgroundColor: "#CFD8DC",
   color: greenHex,
   width: "124px",
@@ -156,12 +156,12 @@ const coinCellFormatText = (coin: string, value: number) => {
   return `${coin}: ${symbol}${valueString}`
 }
 
-const createCryptoTickerBar = async (coins: string[]) => {
+const create = async (coins: string[]) => {
   const mainDiv = createDivElem(mainDivStyle)
-  mainDiv.id = 'roam-fin-crypto-bar'
+  mainDiv.id = 'roam-fin-crypto-price-table'
   coins.forEach(async (coin: string, index: number) => {
-      barCellStyle.order = index.toString()
-      const coinCell = createDivElem(barCellStyle)
+      tableCellStyle.order = index.toString()
+      const coinCell = createDivElem(tableCellStyle)
       coinCell.id = 'roam-fin-crypto-cell'
       const coinValue = await getCoinData(coin)
       const cellString = coinCellFormatText(coin, coinValue)
@@ -173,15 +173,15 @@ const createCryptoTickerBar = async (coins: string[]) => {
   return mainDiv
 }
 
-const deployCryptoTickerBar = async () => {
+const deploy = async () => {
 
   const title: HTMLElement = document.querySelector(".rm-title-display");
   if(title){
       const splitTitle = title.innerText.split(' ')
       if(months.has(splitTitle[0])){
-        const checkExistingCryptoBar: HTMLElement = document.querySelector('#roam-fin-crypto-bar')
+        const checkForExistingElement: HTMLElement = document.querySelector('#roam-fin-crypto-price-table')
 
-        if(checkExistingCryptoBar){
+        if(checkForExistingElement){
             const checkExistingCells: NodeListOf<HTMLElement> = document.querySelectorAll("#roam-fin-crypto-cell")
             checkExistingCells.forEach(async coinCell => {
               const innerText = coinCell.innerText.split(':')
@@ -197,19 +197,19 @@ const deployCryptoTickerBar = async () => {
               coinCell.innerText = coinCellFormatText(ticker, newValue)
             })
         } else {
-            const cryptoBar = await createCryptoTickerBar(window.roamFinance.crypto.tickers)
-            title.after(cryptoBar)
+            const createdElement = await create(window.roamFinance.crypto.tickers)
+            title.after(createdElement)
         }
       }	
   }
  
-  timeout = setTimeout(deployCryptoTickerBar, 30000)
+  timeout = setTimeout(deploy, 30000)
 } 
 
 
-deployCryptoTickerBar()
+deploy()
 window.addEventListener('hashchange', () => {
   clearTimeout(timeout)
-  deployCryptoTickerBar()
+  deploy()
 })
 
