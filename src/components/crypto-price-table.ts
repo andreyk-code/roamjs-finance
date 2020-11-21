@@ -60,6 +60,8 @@ const coinTickerToGeckoID: Record<string, string> = {
   MKR: 'maker',
   CEL: 'celsius-degree-token',
   SNX: 'havven',
+  ALGO: 'algorand',
+  AVAX: 'avalanche-2'
 }
 
 const tokenContractID: Record<string, string> = {

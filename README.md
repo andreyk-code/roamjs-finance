@@ -60,10 +60,10 @@ The following coin tickers and currencies are supported:
 #### Tickers
 |      |      |      |      |      |      |      |      |      |      |      |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| BTC  | ETH  | LTC  | ADA  | AAVE | ATOM | BCH  | BNB  | BSV  | BUSD | CEL  | 
-| CDAI | CRO  | DAI  | DASH | DOT  | EOS  | HT   | IOTA | LEO  | LEND | LINK | 
-| MKR  | NEO  | OKB  | SNX  | THETA| TRX  | UNI  | USDC | USDT | VET  | WBTC | 
-| XEM  | XLM  | XMR  | XRP  | XTZ  | ZEC  |
+| BTC  | ETH  | LTC  | ADA  | AAVE | ALGO | ATOM | AVAX | BCH  | BNB  | BSV  | 
+| BUSD | CEL  | CDAI | CRO  | DAI  | DASH | DOT  | EOS  | HT   | IOTA | LEO  | 
+| LEND | LINK | MKR  | NEO  | OKB  | SNX  | THETA| TRX  | UNI  | USDC | USDT | 
+| VET  | WBTC | XEM  | XLM  | XMR  | XRP  | XTZ  | ZEC  |
 
  
 #### Currencies
