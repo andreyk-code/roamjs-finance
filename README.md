@@ -10,7 +10,7 @@ stock-price-table: coming soon!
 
 ## Deploy with Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnatterstefan%2Froamjs-finance)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fandreynocap%2Froamjs-finance)
 
 ## Installation
 
