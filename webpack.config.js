@@ -15,7 +15,7 @@ module.exports = {
         extensions: [".ts", ".js"],
     },
     output: {
-        path: path.join(__dirname, "build"),
+        path: path.join(__dirname, "public"),
         filename: "[name].js",
     },
     // optimization: {
