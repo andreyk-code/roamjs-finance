@@ -8,6 +8,10 @@ A suite of plugins around finance for [Roam Research](https://roamresearch.com):
 
 stock-price-table: coming soon!
 
+## Deploy with Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fandreynocap%2Froamjs-finance)
+
 ## Installation
 
 0. If you don't already have a roam/js page created in Roam, create one now:
@@ -17,7 +21,7 @@ stock-price-table: coming soon!
 
 1. In the javascript code block for roam/js, add the following snippets of code. Change the ticker and currency values based on what makes the most sense for you. See below in [features](#features) section to see which values are supported.
 
-```
+```js
 window.roamFinance = {}
 window.roamFinance.crypto = {
   tickers: [
