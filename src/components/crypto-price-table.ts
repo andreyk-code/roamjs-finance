@@ -151,7 +151,7 @@ const coinCellFormatText = (coin: string, value: number) => {
         currencySymbols[window.roamFinance.crypto.currency]:'$'
   
   let valueString = value.toString()
-  if(valueString.split('.')[1].length === 1){
+  if(valueString.includes('.') && valueString.split('.')[1].length === 1){
     valueString = valueString + '0'
   }
   
