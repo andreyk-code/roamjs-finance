@@ -96,4 +96,4 @@ If you're looking to add a coin or currency, copy/paste the existing code and ch
     - npm build
 4. Serve the built files
     - npm run local
-Change src in roam/js to http://127.0.0.1:8080/build/${name}.js
+Change src in roam/js to http://127.0.0.1:8080/${name}.js
