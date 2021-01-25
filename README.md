@@ -71,9 +71,9 @@ The following coin tickers and currencies are supported:
 
  
 #### Currencies
-|      |      |      |      |      |      |      |      |      |      |      |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| eur  | usd  | cny  | dkk  | gbp  | inr  | jpy  | mxn  | nok  | rus  | try  |   
+|      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| eur  | usd  | cny  | dkk  | gbp  | inr  | jpy  | aud  | mxn  | nok  | rus  | try  |   
 | btc  | eth  | ltc  | bch  | bnb  | dot  | eos  | link | xlm  | xrp  | yfi  |  
   
 
