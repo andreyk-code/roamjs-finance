@@ -4,7 +4,17 @@ import {
   addChildToElem
 } from '../common'
 
-
+window.roamFinance.crypto = {
+  tickers: [
+    'BTC', 
+    'ETH', 
+    'LTC',
+    'BAT',
+    'CEL',
+    'NEO',
+  ],
+  currency: 'eur'
+}
 
 const months = new Set(['January', 'Jan', 
                        'February', 'Feb', 
