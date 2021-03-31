@@ -11,8 +11,8 @@ jobs:
       - name: Build
         run: npm run build
       - name: RoamJS Publish
-        uses: dvargas92495/roamjs-publish@0.1.0
+        uses: dvargas92495/roamjs-publish@0.1.2
         with:
           token: ${{ secrets.ROAMJS_DEVELOPER_TOKEN }}
           source: public
-          dest: finance-demo
+          path: finance-demo
